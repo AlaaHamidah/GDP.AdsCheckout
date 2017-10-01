@@ -1,0 +1,37 @@
+$primary-color: #d2555a;
+.container {
+    font-family: 'Open Sans';
+    color: #333;
+}
+
+.card-block {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 5px 10px 0 rgba(0, 0, 0, .19);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.price {
+    color: $primary-color;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.align-middle {
+    padding-top: 20px
+}
+
+input[type=number] {
+    width: 100px
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1;
+}
