@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HeaderComponent {
-  currentUser: string = ""
+  localStorage: any
+
+  constructor() {
+    this.localStorage = localStorage
+  }
+
   ngOnInit() {
-    this.currentUser = localStorage.getItem('currentUser')
   }
   logout() {
     localStorage.removeItem('currentUser')

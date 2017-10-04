@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AdsServices, Ad } from './../services/ads'
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AdsServices } from './../services/ads'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ads-list',
@@ -8,32 +9,79 @@ import { AdsServices, Ad } from './../services/ads'
 })
 
 export class AdsListComponent {
+  isProcessing: boolean = false;
+  isValid: boolean = true;
+  display: boolean = false;
+  displayCheckout: boolean = false;
+  isLoading: boolean = true;
+
+  selectedAd: any;
+  Ads: Array<any>;
+  cartItems: Array<any>;
+  checkoutResult: any = {} ;
+  Arr = Array; 
 
   constructor(
-    public adsSvc: AdsServices
+    public adsSvc: AdsServices,
+    public router: Router
   ) { }
 
-  title = 'app';
-  Ads: Array<any>
 
   ngOnInit() {
-
-    this.adsSvc.getAdsList(result => {
+    this.adsSvc.getAdsList().subscribe(result => {
+      this.isLoading = false
       this.Ads = result.map(ad => {
         return {
-          ID: ad.ID,
-          Name: ad.Name,
-          Description: ad.Description,
-          Amount: 0,
-          Price: ad.Price
+          Id: ad.id,
+          Name: ad.name,
+          Description: ad.description,
+          Quantity: 0,
+          Price: ad.price,
+          Offer: ad.offer,
+          ProductRate: ad.productRate
         }
       })
+    }, err => {
+      if (err.status == 401)
+        //Not Authorized
+        this.router.navigate(['/login'])
     })
   }
 
-  checkout() {
-    this.adsSvc.checkout(this.Ads, data => {
+  showOfferDetails(row) {
+    this.selectedAd = row;
+    this.display = true;
+  }
 
-    })
+  hideOfferDetails() {
+    this.display = false;
+    this.selectedAd = null
+  }
+
+  validateCheckout() {
+    let check = this.Ads.filter(ad => ad.Quantity > 0)
+    return (this.isValid = check.length > 0)
+  }
+
+  checkout() {
+    if (this.validateCheckout()) {
+      this.displayCheckout = true;
+      this.isProcessing = true;
+      this.cartItems = this.Ads.map(ad => {
+        return {
+          ProductId: ad.Id,
+          Quantity: ad.Quantity,
+          Price: ad.Price
+        }
+      })
+      this.adsSvc.getCheckout(this.cartItems).subscribe(result => {
+        this.isProcessing = false;
+        this.checkoutResult = result;
+      });
+    }
+  }
+
+  proceed() {
+    this.router.navigate(['/success']);
   }
 }

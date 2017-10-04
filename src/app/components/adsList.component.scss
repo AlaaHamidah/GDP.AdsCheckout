@@ -1,4 +1,10 @@
-$primary-color: #d2555a;
+
+a {
+    cursor: pointer;
+    color:#333;
+    text-decoration: none;
+}
+
 .container {
     font-family: 'Open Sans';
     color: #333;
@@ -13,13 +19,7 @@ $primary-color: #d2555a;
     background-color: #fff;
 }
 
-.btn-primary {
-    background-color: $primary-color;
-    border-color: $primary-color;
-}
-
 .price {
-    color: $primary-color;
     font-size: 11pt;
     font-weight: bold;
 }
@@ -34,4 +34,19 @@ input[type=number] {
 
 input[type=number]::-webkit-inner-spin-button {
     opacity: 1;
+}
+
+.close-btn {
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-row {
+    margin: 20px;
+    margin-top: 30px;
+}
+
+.form-control{
+    display: block;
+    margin: 0 auto
 }

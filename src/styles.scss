@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/css?family=Open%20Sans:400,600,700,300");
+$primary-color: #004a94;
 body {
     background-color: #f1f1f1 !important;
+}
+
+.btn-primary {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+}
+
+.price {
+    color: $primary-color;
 }

@@ -1,28 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions, RequestOptionsArgs } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 
-export interface Ad {
-    ID: string,
-    Name: string,
-    Description: string,
-    Price: number
-}
-
+@Injectable()
 export class AdsServices {
+    constructor(private http: Http) { }
 
-    adsList: Array<Ad> = [];
+    private basePath = "http://localhost:5000"
 
-    getAdsList(successCallback?: ((value: Array<Ad>) => void)) {
-        this.adsList = []
-        //this part must be replaced with API retuned data
-        this.adsList.push({ ID: 'classic', Name: 'Classic Ad', Description: 'Offers the most basic level of advertisement', Price: 269.99 })
-        this.adsList.push({ ID: 'standout', Name: 'Standout Ad', Description: 'Allows advertisers to use a company logo and use a longer presentation text', Price: 322.99 })
-        this.adsList.push({ ID: 'premium', Name: 'Premium Ad', Description: 'Same benefits as Standout Ad, but also puts the advertisement at the top of the results, allowing higher visibility', Price: 394.99 });
+    getAdsList(): Observable<Array<any>> {
+        let currentUser = localStorage.getItem('currentUser').toString()
+        let currentPath = this.basePath + "/products/customer";
+        let headerParams = new Headers({});
+        headerParams.set('customerId', currentUser)
 
-        successCallback(this.adsList);
+        let requestOptions: RequestOptionsArgs = {
+            method: 'GET',
+            headers: headerParams
+        };
+
+        return this.http.get(currentPath, requestOptions).map((res: Response) => res.json())
+            .catch(error => Observable.throw(error.message || error));
     }
 
-    checkout(ads: Array<Ad>, successCallback?: ((value: number) => void)) {
 
+    getCheckout(cartItems: Array<any>): Observable<any> {
+        let currentUser = localStorage.getItem('currentUser').toString();
+        let currentPath = this.basePath + "/checkout";
+        let headerParams = new Headers({});
+        headerParams.set('customerId', currentUser)
+
+        let requestOptions: RequestOptionsArgs = {
+            method: 'POST',
+            headers: headerParams
+        };
+        requestOptions.body = cartItems;
+
+        return this.http.request(currentPath, requestOptions).map((res: Response) => res.json())
+            .catch(error => Observable.throw(error.message || error));
     }
-
 }
