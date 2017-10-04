@@ -15,8 +15,7 @@ namespace GDP.AdsCheckout.API.Controllers
     {
       this.productsRepo = productsRepo;
     }
-
-    // GET api/values
+    
     [HttpGet]
     public IActionResult GetProducts()
     {
@@ -26,8 +25,7 @@ namespace GDP.AdsCheckout.API.Controllers
       else
         return Json(this.productsRepo.GetProducts());
     }
-
-    // GET api/values/5
+    
     [HttpGet("{id}")]
     public IActionResult GetProduct(string id)
     {

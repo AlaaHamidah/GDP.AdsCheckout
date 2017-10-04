@@ -26,8 +26,7 @@ namespace GDP.AdsCheckout.API.Controllers
       else
         return Json(this.offersRepo.GetOffers(customerId));
     }
-
-    // GET api/values/5
+    
     [HttpGet("{id}")]
     public IActionResult GetOffer(string id)
     {

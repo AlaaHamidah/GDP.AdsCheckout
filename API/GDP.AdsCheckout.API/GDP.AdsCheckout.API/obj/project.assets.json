@@ -12538,15 +12538,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
+      "projectUniqueName": "c:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
       "projectName": "GDP.AdsCheckout.API",
-      "projectPath": "C:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
+      "projectPath": "c:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
       "packagesPath": "C:\\Users\\alaa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\obj\\",
+      "outputPath": "c:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -7,9 +7,15 @@ namespace GDP.AdsCheckout.API.Services
 {
   public class CheckoutService
   {
-    DAL.OffersRepository offersRepo = new DAL.OffersRepository();
     double totalPrice = 0;
     double totalPriceAfterDiscount = 0;
+
+    DAL.OffersRepository offersRepo;
+
+    public CheckoutService(DAL.OffersRepository offersRepo)
+    {
+      this.offersRepo = offersRepo;
+    }
 
     public (double before, double after) GetCheckout(string customerId, IEnumerable<Models.CartItem> cartItems)
     {
