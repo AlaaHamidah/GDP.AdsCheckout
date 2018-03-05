@@ -1,28 +1,47 @@
-# GDP
+# Ads Checkout
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
+## Requirements
 
-## Development server
+In order to run the solution, you need to install the following tools and SDKs:
+1.	Node.Js
+2.	.Net Core 2 SDK
+3.	Visual Studio Code 
+4.	Angular-cli and Typescript
+
+      run the following commands in terminal 
+      
+        `npm install – g @angular/cli@1.2.1`
+        
+        `npm install –g typescript@2.3.4`
+        
+5.	Angular pakcages
+      
+      run the following command in terminal
+      
+        `cd [PATH_TO_PRJECT]`
+        
+        `npm install`
+        
+        
+## Run BackEnd
+
+Using visual studio code, open project API folder : `[PATH_TO_PRJECT]\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API`
+
+from toolbar select Debug -> Start Debugging
+
+when ready, you can run the front end.
+
+## Run FrontEnd
+
+Using visual studio code, open project folder: `[PATH_TO_PRJECT]`
+
+From toolbar, select View -> Integrated Terminal
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You need to run BackEnd First, then 
+Run `ng test` to execute the unit tests
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
