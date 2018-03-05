@@ -5,46 +5,46 @@ using System.Threading.Tasks;
 
 namespace GDP.AdsCheckout.API.Services
 {
-  public class CheckoutService
-  {
-    double totalPrice = 0;
-    double totalPriceAfterDiscount = 0;
-
-    DAL.OffersRepository offersRepo;
-
-    public CheckoutService(DAL.OffersRepository offersRepo)
+    public class CheckoutService
     {
-      this.offersRepo = offersRepo;
-    }
+        double totalPrice = 0;
+        double totalPriceAfterDiscount = 0;
 
-    public (double before, double after) GetCheckout(string customerId, IEnumerable<Models.CartItem> cartItems)
-    {
-      foreach (Models.CartItem item in cartItems)
-      {
-        this.totalPrice += item.Quantity * item.Price;
+        DAL.OffersRepository offersRepo;
 
-        var offer = offersRepo.GetProductOffer(customerId, item.ProductId);
-        //has offer and offer rules are verified
-        if (offer != null && offer.MinimumPurchase <= item.Quantity)
+        public CheckoutService(DAL.OffersRepository offersRepo)
         {
-          switch (offer.OfferType)
-          {
-            case "BuyNFreeM":
-              this.totalPriceAfterDiscount += Math.Ceiling((double)item.Quantity / offer.MinimumPurchase * (offer.MinimumPurchase - offer.FreeItem)) * item.Price;
-              break;
-
-            case "DiscountForN":
-              this.totalPriceAfterDiscount += item.Quantity * offer.NewPrice;
-              break;
-          }
+            this.offersRepo = offersRepo;
         }
-        // calculate as orginal price 
-        else this.totalPriceAfterDiscount += item.Quantity * item.Price;
 
-      }
-      return (totalPrice , totalPriceAfterDiscount );
+        public object GetCheckout(string customerId, IEnumerable<Models.CartItem> cartItems)
+        {
+            foreach (Models.CartItem item in cartItems)
+            {
+                this.totalPrice += item.Quantity * item.Price;
+
+                var offer = offersRepo.GetAdOffer(customerId, item.AdId);
+                //has offer and offer rules are verified
+                if (offer != null && offer.MinimumPurchase <= item.Quantity)
+                {
+                    switch (offer.OfferType)
+                    {
+                        case "BuyNFreeM":
+                            this.totalPriceAfterDiscount += Math.Ceiling((double)item.Quantity / offer.MinimumPurchase * (offer.MinimumPurchase - offer.FreeItem)) * item.Price;
+                            break;
+
+                        case "DiscountForN":
+                            this.totalPriceAfterDiscount += item.Quantity * offer.NewPrice;
+                            break;
+                    }
+                }
+                // calculate as orginal price 
+                else this.totalPriceAfterDiscount += item.Quantity * item.Price;
+
+            }
+            return new { totalPrice = this.totalPrice, totalPriceAfterDiscount = this.totalPriceAfterDiscount };
+        }
+
     }
-
-  }
 
 }

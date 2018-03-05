@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/css?family=Open%20Sans:400,600,700,300");
-$primary-color: #004a94;
+$primary-color: #0D3880;
 body {
     background-color: #f1f1f1 !important;
+    
+}
+
+a,
+a:hover {
+    color: $primary-color !important
 }
 
 .btn-primary {

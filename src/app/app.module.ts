@@ -17,11 +17,14 @@ import { AuthGuard } from './services/authGuard';
 
 import { DialogModule } from 'primeng/primeng';
 import { SuccessComponent } from './components/success.component';
+import { CheckoutComponent } from './components/checkout.component';
+import { OfferDetailsComponent } from './components/offerdetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent, FooterComponent, LoginComponent, AdsListComponent, SuccessComponent
+    HeaderComponent, FooterComponent, LoginComponent,
+    AdsListComponent, SuccessComponent, CheckoutComponent, OfferDetailsComponent
   ],
   imports: [
     HttpModule,

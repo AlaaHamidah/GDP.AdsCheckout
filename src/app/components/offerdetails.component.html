@@ -1,0 +1,13 @@
+<h2 class="align-center">
+    <i class="fa fa-tags"></i>
+    <b id="offer-title" *ngIf="selectedAd.Offer.offerType =='BuyNFreeM'">Buy {{selectedAd.Offer.minimumPurchase}} Get {{selectedAd.Offer.freeItem}}!</b>
+    <b id="offer-title" *ngIf="selectedAd.Offer.offerType =='DiscountForN'"> {{ (selectedAd.Price - selectedAd.Offer.newPrice ) | currency:'USD':'$'}} Discount!</b>
+</h2>
+<div class="row">
+    <h5>
+        {{selectedAd.Offer.description}} </h5>
+</div>
+<div class="row">
+    <button id="hideDialog" class="btn btn-grey btn-block btn-lg" (click)="HideDialog()">
+        <i class="fa fa-lightbulb-o"></i> Got it!</button>
+</div>

@@ -11,7 +11,7 @@ namespace GDP.AdsCheckout.API.Models
 
         public string CustomerId { get; set;  }
 
-        public string ProductId { get; set; }
+        public string AdId { get; set; }
 
         public string OfferType { get; set; }
 

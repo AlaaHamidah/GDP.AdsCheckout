@@ -18,9 +18,9 @@ namespace GDP.AdsCheckout.API.DAL
       return Seeds.offers.FirstOrDefault(_ => _.CustomerId == customerId && _.Id == offerId);
     }
 
-    public Models.Offer GetProductOffer(string customerId, string productId)
+    public Models.Offer GetAdOffer(string customerId, string adId)
     {
-      return Seeds.offers.FirstOrDefault(_ => _.CustomerId == customerId && _.ProductId == productId);
+      return Seeds.offers.FirstOrDefault(_ => _.CustomerId == customerId && _.AdId == adId);
     }
   }
 }

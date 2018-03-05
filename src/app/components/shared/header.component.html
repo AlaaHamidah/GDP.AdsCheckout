@@ -1,12 +1,25 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">seek asia</a>
+      <a class="" href="#">
+        <img src="../assets/images/logo-seekasia.png" class="logo">
+      </a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li *ngIf="localStorage.getItem('currentUser') != null"><a href="#"><span class="glyphicon glyphicon-user"></span> Logged as <b>{{localStorage.getItem('currentUser') }}</b></a></li>
-      <li *ngIf="localStorage.getItem('currentUser') != null"><a [routerLink]="['/login']" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-      <li *ngIf="localStorage.getItem('currentUser')  == null "><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+      <li *ngIf="localStorage.getItem('currentUser') != null">
+        <a href="#">
+          <span class="fa fa-user"></span> Logged as
+          <b>{{localStorage.getItem('currentUser') }}</b>
+        </a>
+      </li>
+      <li *ngIf="localStorage.getItem('currentUser') != null">
+        <a id="logout" [routerLink]="['/login']" (click)="logout()">
+          <span class="fa fa-sign-out"></span> Log Out</a>
+      </li>
+      <li *ngIf="localStorage.getItem('currentUser') == null ">
+        <a [routerLink]="['/login']">
+          <span class="fa fa-sign-in"></span> Log In</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -26,7 +26,7 @@ namespace GDP.AdsCheckout.API
       services.AddMvc();
       services.AddCors();
       services.AddTransient<DAL.OffersRepository>();
-      services.AddTransient<DAL.ProductsRepository>();
+      services.AddTransient<DAL.AdsRepository>();
       services.AddTransient<Services.CheckoutService>();
 
     }

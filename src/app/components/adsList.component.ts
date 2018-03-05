@@ -9,17 +9,13 @@ import { Router } from '@angular/router';
 })
 
 export class AdsListComponent {
-  isProcessing: boolean = false;
   isValid: boolean = true;
-  display: boolean = false;
+  displayOfferDetails: boolean = false;
   displayCheckout: boolean = false;
   isLoading: boolean = true;
 
   selectedAd: any;
   Ads: Array<any>;
-  cartItems: Array<any>;
-  checkoutResult: any = {} ;
-  Arr = Array; 
 
   constructor(
     public adsSvc: AdsServices,
@@ -37,8 +33,7 @@ export class AdsListComponent {
           Description: ad.description,
           Quantity: 0,
           Price: ad.price,
-          Offer: ad.offer,
-          ProductRate: ad.productRate
+          Offer: ad.offer
         }
       })
     }, err => {
@@ -50,12 +45,20 @@ export class AdsListComponent {
 
   showOfferDetails(row) {
     this.selectedAd = row;
-    this.display = true;
+    this.displayOfferDetails = true;
   }
 
   hideOfferDetails() {
-    this.display = false;
+    this.displayOfferDetails = false;
     this.selectedAd = null
+  }
+
+  validateNumber(e) {
+    if (!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58)
+      || e.keyCode == 8)) {
+      return false;
+    }
   }
 
   validateCheckout() {
@@ -63,25 +66,9 @@ export class AdsListComponent {
     return (this.isValid = check.length > 0)
   }
 
-  checkout() {
+  showCheckout() {
     if (this.validateCheckout()) {
       this.displayCheckout = true;
-      this.isProcessing = true;
-      this.cartItems = this.Ads.map(ad => {
-        return {
-          ProductId: ad.Id,
-          Quantity: ad.Quantity,
-          Price: ad.Price
-        }
-      })
-      this.adsSvc.getCheckout(this.cartItems).subscribe(result => {
-        this.isProcessing = false;
-        this.checkoutResult = result;
-      });
     }
-  }
-
-  proceed() {
-    this.router.navigate(['/success']);
   }
 }

@@ -12533,23 +12533,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alaa\\.nuget\\packages\\": {},
+    "C:\\Users\\Alaa\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
+      "projectUniqueName": "C:\\Users\\Alaa\\Documents\\Alaa\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
       "projectName": "GDP.AdsCheckout.API",
-      "projectPath": "c:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
-      "packagesPath": "C:\\Users\\alaa\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\alaa\\Documents\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\obj\\",
+      "projectPath": "C:\\Users\\Alaa\\Documents\\Alaa\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API.csproj",
+      "packagesPath": "C:\\Users\\Alaa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alaa\\Documents\\Alaa\\GDP\\API\\GDP.AdsCheckout.API\\GDP.AdsCheckout.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\alaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

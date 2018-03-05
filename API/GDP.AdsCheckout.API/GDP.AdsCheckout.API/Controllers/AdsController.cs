@@ -7,54 +7,54 @@ using Microsoft.AspNetCore.Mvc;
 namespace GDP.AdsCheckout.API.Controllers
 {
   [Route("[controller]")]
-  public class ProductsController : Controller
+  public class AdsController : Controller
   {
-    private DAL.ProductsRepository productsRepo;
+    private DAL.AdsRepository adsRepo;
 
-    public ProductsController(DAL.ProductsRepository productsRepo)
+    public AdsController(DAL.AdsRepository adsRepo)
     {
-      this.productsRepo = productsRepo;
+      this.adsRepo = adsRepo;
     }
     
     [HttpGet]
-    public IActionResult GetProducts()
+    public IActionResult GetAds()
     {
       var customerId = this.GetCustomerId();
       if (string.IsNullOrEmpty(customerId))
         return StatusCode(401);
       else
-        return Json(this.productsRepo.GetProducts());
+        return Json(this.adsRepo.GetAds());
     }
     
     [HttpGet("{id}")]
-    public IActionResult GetProduct(string id)
+    public IActionResult GetAd(string id)
     {
       var customerId = this.GetCustomerId();
       if (string.IsNullOrEmpty(customerId))
         return StatusCode(401);
       else
-        return Json(this.productsRepo.GetProduct(id));
+        return Json(this.adsRepo.GetAd(id));
     }
 
     [HttpGet("customer")]
-    public IActionResult GetProductsByCustomerId()
+    public IActionResult GetAdsByCustomerId()
     {
       var customerId = this.GetCustomerId();
       if (string.IsNullOrEmpty(customerId))
         return StatusCode(401);
       else
-        return Json(this.productsRepo.GetProductsByCustomerId(customerId));
+        return Json(this.adsRepo.GetAdsByCustomerId(customerId));
     }
 
 
     [HttpGet("customer/{id}")]
-    public IActionResult GetProductsByCustomerId(string id)
+    public IActionResult GetAdsByCustomerId(string id)
     {
       var customerId = this.GetCustomerId();
       if (string.IsNullOrEmpty(customerId))
         return StatusCode(401);
       else
-        return Json(this.productsRepo.GetProductByCustomerId(customerId, id));
+        return Json(this.adsRepo.GetAdByCustomerId(customerId, id));
     }
 
   }

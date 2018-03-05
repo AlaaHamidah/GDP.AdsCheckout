@@ -10,7 +10,7 @@ export class AdsServices {
 
     getAdsList(): Observable<Array<any>> {
         let currentUser = localStorage.getItem('currentUser').toString()
-        let currentPath = this.basePath + "/products/customer";
+        let currentPath = this.basePath + "/ads/customer";
         let headerParams = new Headers({});
         headerParams.set('customerId', currentUser)
 
@@ -29,7 +29,7 @@ export class AdsServices {
         let currentPath = this.basePath + "/checkout";
         let headerParams = new Headers({});
         headerParams.set('customerId', currentUser)
-
+        
         let requestOptions: RequestOptionsArgs = {
             method: 'POST',
             headers: headerParams

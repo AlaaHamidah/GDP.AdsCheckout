@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GDP.AdsCheckout.API.Models
 {
-  public class Product
+  public class Ad
   {
     public string Id { get; set; }
 

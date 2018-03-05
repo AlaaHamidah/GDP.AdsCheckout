@@ -7,7 +7,7 @@ namespace GDP.AdsCheckout.API.Models
 {
     public class CartItem
     {
-        public string ProductId { get; set; }
+        public string AdId { get; set; }
 
         public int Quantity { get; set; }
 

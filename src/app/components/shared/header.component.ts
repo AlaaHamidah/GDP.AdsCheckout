@@ -15,6 +15,7 @@ export class HeaderComponent {
 
   ngOnInit() {
   }
+  
   logout() {
     localStorage.removeItem('currentUser')
   }

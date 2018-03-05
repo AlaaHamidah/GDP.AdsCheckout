@@ -9,3 +9,14 @@ C:\Users\alaa\Documents\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debu
 C:\Users\alaa\Documents\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.AssemblyInfo.cs
 C:\Users\alaa\Documents\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.dll
 C:\Users\alaa\Documents\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.pdb
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\bin\Debug\netcoreapp2.0\GDP.AdsCheckout.API.deps.json
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\bin\Debug\netcoreapp2.0\GDP.AdsCheckout.API.runtimeconfig.json
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\bin\Debug\netcoreapp2.0\GDP.AdsCheckout.API.runtimeconfig.dev.json
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\bin\Debug\netcoreapp2.0\GDP.AdsCheckout.API.dll
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\bin\Debug\netcoreapp2.0\GDP.AdsCheckout.API.pdb
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.csprojResolveAssemblyReference.cache
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.csproj.CoreCompileInputs.cache
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.AssemblyInfoInputs.cache
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.AssemblyInfo.cs
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.dll
+c:\Users\Alaa\Documents\Alaa\GDP\API\GDP.AdsCheckout.API\GDP.AdsCheckout.API\obj\Debug\netcoreapp2.0\GDP.AdsCheckout.API.pdb
